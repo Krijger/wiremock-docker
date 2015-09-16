@@ -13,4 +13,10 @@ language:
 jdk:
   - oraclejdk8
 
-script: ./scripts/gradle-check-push.sh
+before_script:
+  - docker login -u ${DOCKER_HUB_USER} -p ${DOCKER_HUB_KEY} -e ${DOCKER_HUB_EMAIL}
+
+script: gradle clean check pushImage -i
+
+after_script:
+  - docker logout
