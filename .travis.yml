@@ -1,0 +1,23 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - curl -L https://github.com/docker/compose/releases/download/1.4.0/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+
+language:
+  - groovy
+jdk:
+  - oraclejdk8
+
+before_script:
+  - docker login -u ${DOCKER_HUB_USER} -p ${DOCKER_HUB_KEY} -e ${DOCKER_HUB_EMAIL}
+
+script:
+  - gradle clean check pushImage -i
+
+after_script:
+  - docker logout

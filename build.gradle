@@ -1,0 +1,13 @@
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath group: 'nl.qkrijger.gradle', name: 'docker-gradle', version: '0.2'
+  }
+}
+apply plugin: 'groovy'
+apply plugin: 'docker'
+
+
+docker.imageName = 'qkrijger/wiremock'
