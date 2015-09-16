@@ -10,5 +10,7 @@ before_install:
 
 language:
   - groovy
+jdk:
+  - oraclejdk8
 
 script: ./scripts/gradle-check-push.sh
