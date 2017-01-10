@@ -3,7 +3,7 @@ FROM java:openjdk-8u111-jre
 MAINTAINER Quinten Krijger
 
 RUN mkdir /usr/lib/wiremock-standalone
-COPY build/stackwork-deps/wiremock-standalone.jar /usr/lib/wiremock-standalone
+COPY build/stackwork-deps/wiremock-standalone.jar /usr/lib/wiremock/
 
 WORKDIR /root
 RUN mkdir /root/mappings

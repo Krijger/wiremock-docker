@@ -2,6 +2,7 @@ import static org.stackwork.gradle.docker.ModuleType.*
 
 plugins {
   id "org.stackwork" version "0.9.0-rc.1"
+  id "groovy"
 }
 
 repositories {
