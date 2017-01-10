@@ -1,13 +1,23 @@
-buildscript {
-  repositories {
-    jcenter()
-  }
-  dependencies {
-    classpath group: 'nl.qkrijger.gradle', name: 'docker-gradle', version: '0.2'
+import static org.stackwork.gradle.docker.ModuleType.*
+
+plugins {
+  id "org.stackwork" version "0.9.0-rc.1"
+}
+
+repositories {
+  jcenter()
+}
+
+project.version = 1.1
+
+stackwork {
+  moduleType = DELIVERABLE_IMAGE
+  imageName = 'qkrijger/wiremock'
+
+}
+
+dependencies {
+  stackwork group: 'com.github.tomakehurst', name: 'wiremock-standalone', version: '2.5.0', {
+    transitive = false
   }
 }
-apply plugin: 'groovy'
-apply plugin: 'docker'
-
-
-docker.imageName = 'qkrijger/wiremock'
