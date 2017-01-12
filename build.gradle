@@ -9,7 +9,7 @@ repositories {
   jcenter()
 }
 
-project.version = 1.1
+project.version = 1.2
 
 stackwork {
   moduleType = DELIVERABLE_IMAGE
