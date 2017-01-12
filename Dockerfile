@@ -15,4 +15,4 @@ ENTRYPOINT ["java", "-jar", "/usr/lib/wiremock/wiremock-standalone.jar"]
 CMD ["--port", "80"]
 
 EXPOSE 2222
-RUN apt-get -y install netcat
+RUN apt-get update && apt-get -y install netcat
